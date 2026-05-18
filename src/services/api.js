@@ -43,6 +43,7 @@ export const workspaceService = {
   getBoards: () => api.get('/workspace/boards'),
   createBoard: (title) => api.post('/workspace/boards', { title }),
   updateBoard: (boardId, title) => api.put('/workspace/boards', { boardId, title }),
+  deleteBoard: (boardId) => api.delete(`/workspace/boards/${boardId}`),
   inviteUser: (data) => api.post('/workspace/invite', data),
   getBoardData: (boardId, date) => api.get(`/workspace/board/${boardId}${date ? `?date=${date}` : ''}`),
   getBoardMembers: (boardId) => api.get(`/workspace/board/${boardId}/members`),
